@@ -109,7 +109,7 @@ stages:
               make: build
 
           - script: |
-              yarn test
+              yarn test:coverage
             displayName: 'Unit tests exec'
 
           - bash: |
