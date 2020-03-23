@@ -1,9 +1,9 @@
 {
-  "name": "my_rai_ut",
-  "version": "4.1.1",
-  "description": "THIS IS ONLY FOR TEST",
-  "repository": "https://github.com/rcastino/my_rai_ut",
-  "author": "test",
+  "name": "italia-utils",
+  "version": "4.1.0",
+  "description": "Tools and utilities for the Digital Citizenship project",
+  "repository": "https://github.com/teamdigitale/italia-utils",
+  "author": "https://teamdigitale.governo.it",
   "license": "MIT",
   "bin": {
     "gen-api-models": "dist/index.js"
@@ -13,11 +13,14 @@
     "templates/"
   ],
   "scripts": {
+    "prepublishOnly": "crlf --set=LF dist/*",
+    "prepublish": "npm run build",
+    "build": "rimraf dist && node_modules/.bin/tsc",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags",
     "lint": "tslint --project .",
     "test": "jest",
-    "test:coverage": "jest --coverage",
-    "build": "yarn generate:definitions && tsc",
-    "generate:definitions": "rimraf dist"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "fs-extra": "^6.0.0",
