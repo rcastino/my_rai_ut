@@ -29,7 +29,9 @@ steps:
     displayName: 'Set up Node.js'
     
   - script: |
-      yarn install --frozen-lockfile --ignore-scripts
+      ls node_modules/.bin/
+      yarn install --frozen-lockfile
+      ls node_modules/.bin/
     displayName: 'Install yarn dependencies'
   
   - ${{ if eq(parameters.make, 'build') }}:
