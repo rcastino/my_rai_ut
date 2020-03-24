@@ -1,9 +1,9 @@
 {
-  "name": "italia-utils",
+  "name": "my_rai_ut",
   "version": "4.1.1",
-  "description": "Tools and utilities for the Digital Citizenship project",
-  "repository": "https://github.com/teamdigitale/italia-utils",
-  "author": "https://teamdigitale.governo.it",
+  "description": "THIS IS A TEST",
+  "repository": "https://github.com/rcastino/my_rai_ut",
+  "author": "test rc",
   "license": "MIT",
   "bin": {
     "gen-api-models": "dist/index.js"
@@ -42,7 +42,6 @@
     "danger-plugin-digitalcitizenship": "^0.3.1",
     "io-ts": "1.8.5",
     "jest": "^22.4.3",
-    "release-it": "^13.3.0",
     "rimraf": "^2.6.2",
     "ts-jest": "^22.4.5",
     "ts-node": "^6.1.0",
