@@ -15,7 +15,7 @@
   "scripts": {
     "prepublishOnly": "crlf --set=LF dist/*",
     "prepublish": "npm run build",
-    "build": "rimraf dist && node_modules/.bin/tsc",
+    "build": "rimraf dist && tsc",
     "version": "npm run build",
     "postversion": "git push && git push --tags",
     "lint": "tslint --project .",
