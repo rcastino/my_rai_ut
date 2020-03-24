@@ -13,7 +13,16 @@ steps:
   - checkout: self
     persistCredentials: true
     displayName: 'Checkout'
-      
+        
+  - task: Cache@2
+    inputs:
+      key: 'yarn | "$(Agent.OS)" | yarn.lock'
+      restoreKeys: |
+        yarn | "$(Agent.OS)"
+        yarn
+      path: $(YARN_CACHE_FOLDER)
+    displayName: Cache yarn packages
+  
   - task: UseNode@1
     inputs:
       version: $(NODE_VERSION)
@@ -21,7 +30,6 @@ steps:
     
   - script: |
       yarn install --frozen-lockfile --ignore-scripts
-      ls node_modules/.bin/
     displayName: 'Install yarn dependencies'
   
   - ${{ if eq(parameters.make, 'build') }}:
