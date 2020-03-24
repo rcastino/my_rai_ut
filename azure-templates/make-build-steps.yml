@@ -14,15 +14,13 @@ steps:
     persistCredentials: true
     displayName: 'Checkout'
       
-  
   - task: UseNode@1
     inputs:
       version: $(NODE_VERSION)
     displayName: 'Set up Node.js'
     
   - script: |
-      rm yarn.lock
-      yarn install
+      yarn install --frozen-lockfile --ignore-scripts
       ls node_modules/.bin/
     displayName: 'Install yarn dependencies'
   
