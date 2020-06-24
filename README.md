@@ -1,4 +1,4 @@
-# Utilities and tools for the Digital Citizenship initiative
+# Utilities and tools for the Digital Citizenship initiative RAI Test
 
 This package provide some tools that are used across the projects of the
 Digital Citizenship initiative.
