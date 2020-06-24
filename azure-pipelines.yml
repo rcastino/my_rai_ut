@@ -137,11 +137,12 @@ stages:
       - Build
       - Test
     jobs:
+      ##### IT WAS: make build
       - job: publish_package
         steps:
           - template: azure-templates/make-build-steps.yml
             parameters:
-              make: build
+              make: install_dependencies 
             
             # The NPM auth token must be set in a local .npmrc file
           - bash: |
